@@ -30,9 +30,7 @@
           class="rounded border p-3 border-gray-800 bg-slate-800 flex flex-col gap-y-2 md:max-w-lg"
         >
           <span
-            ><img
-              src="../assets/imgs/fb.jpg"
-              class="object-cover w-full h-40 rounded"
+            ><img src="../assets/imgs/fb.jpg" class="object-cover w-full h-40 rounded"
           /></span>
           <h3 class="text-white flex justify-center items-center mx-auto">
             {{ product.name }}
@@ -132,6 +130,29 @@ export default {
     showCart() {
       this.showed = !this.showed;
     },
+    async fetchAll() {
+      let url = "http://localhost:8000/api/rooms/";
+      const data = await fetch(url);
+      let results = data.json();
+      console.log(results);
+    },
+    async fetchOne(id) {
+      let url = `http://localhost:8000/api/rooms/${id}/`;
+      const data = await fetch(url);
+      let results = data.json();
+      console.log(results);
+    },
+    async fetchMessages() {
+      let url = "http://localhost:8000/api/messages/";
+      const data = await fetch(url);
+      let results = data.json();
+      console.log(results);
+    },
+  },
+  mounted() {
+    // this.fetchAll();
+    /*  this.fetchOne(15); */
+    this.fetchMessages();
   },
 
   components: { Maincart },
