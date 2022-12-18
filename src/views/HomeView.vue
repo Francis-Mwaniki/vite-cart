@@ -131,19 +131,19 @@ export default {
       this.showed = !this.showed;
     },
     async fetchAll() {
-      let url = "http://localhost:8000/api/rooms/";
+      let url = "https://study-bud-khaki.vercel.app/api/rooms/";
       const data = await fetch(url);
       let results = data.json();
       console.log(results);
     },
     async fetchOne(id) {
-      let url = `http://localhost:8000/api/rooms/${id}/`;
+      let url = `https://study-bud-khaki.vercel.app/api/rooms/${id}/`;
       const data = await fetch(url);
       let results = data.json();
       console.log(results);
     },
     async fetchMessages() {
-      let url = "http://localhost:8000/api/messages/";
+      let url = "https://study-bud-khaki.vercel.app/api/messages/";
       const data = await fetch(url);
       let results = data.json();
       console.log(results);
